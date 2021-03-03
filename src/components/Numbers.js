@@ -5,19 +5,21 @@ export const Numbers = (props) => {
   const [filterDisplay, setFilterDisplay] = useState(props.persons);
 
   const handleChange = (value) => {
+    setWord(value);
     let oldList = props.persons.map((person) => {
-      return { name: person.name, number: person.number };
+      // return { name: person.name, number: person.number };
+      return person;
       // name: person.name.toLowerCase()
     });
 
     console.log(value);
-    console.log(oldList);
+    // console.log(oldList);
 
     if (value !== "") {
       let newList = [];
-      setWord(value);
+
       newList = oldList.filter((person) =>
-        person.name.includes(word.toLowerCase())
+        person.full_name.toLowerCase().includes(value.toLowerCase())
       );
       setFilterDisplay(newList);
     } else {
@@ -25,14 +27,26 @@ export const Numbers = (props) => {
     }
   };
 
+  const styles = {
+    border: "1px solid rgba(0, 0, 0, 0.05)",
+  };
+
+  const outer_styles = {
+    border: "5vh solid rgba(0, 0, 0, 0.00)",
+  };
+
   return (
-    <div>
-      <h1>Numbers</h1>
+    <div style={outer_styles}>
+      <h1>Destination Search</h1>
       filter: <input onChange={(e) => handleChange(e.target.value)}></input>
-      {filterDisplay.map((person, i) => (
-        <div key={i}>
+      {filterDisplay.map((destination, i) => (
+        <div key={i} style={styles}>
           <li>
-            {person.name} <span>{person.number}</span>
+            {destination.full_name} ----{" "}
+            <span>
+              {destination.uid}, {destination.name}, {destination.country_code},{" "}
+              {destination.lonlat}
+            </span>
           </li>
         </div>
       ))}
