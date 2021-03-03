@@ -38,6 +38,7 @@ export const Numbers = (props) => {
   return (
     <div style={outer_styles}>
       <h1>Destination Search</h1>
+      <p>500 countries from SG, MY, JP</p>
       filter: <input onChange={(e) => handleChange(e.target.value)}></input>
       {filterDisplay.map((destination, i) => (
         <div key={i} style={styles}>
