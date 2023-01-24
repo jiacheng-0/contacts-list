@@ -1,3 +1,13 @@
+# Screenshots
+
+## Full list of destinations
+
+![image-20230124084113055](README.assets/image-20230124084113055.png)
+
+## Filter to "Singapore" search
+
+![image-20230124084132524](README.assets/image-20230124084132524.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
